@@ -13,5 +13,9 @@ class PostController extends Controller
         $post_list=post::orderBy('post_date','DESC')->get();
         return view('home',compact('post_list'));
     }
-    //
+    public function show($id)
+{
+    $post1=post::findOrFail($id);
+    return view('detail',compact('post1'));
+}    
 }

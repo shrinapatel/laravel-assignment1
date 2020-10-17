@@ -1,6 +1,6 @@
 @extends('layout')
 @section('content')
-<div class="banner-slider">
+
 <!--{{$post_list}}-->
          <div class="container-fluid">
             <div class="row">
@@ -56,9 +56,10 @@
                <div class="col-md-6">
                   <div class="full blog_cont">
                   @foreach($post_list as $list)
-                     <h4>The biggest and most awesome camera  of  year</h4>
+                  <h4><a href="{{route('detail',['id'=>$list->id])}}">{{$list->post_title}}</a></h4>
                      <h5>{{$list->post_date}}</h5>
-                     <h5>{{$list->post_title}}</h5>
+                     
+
                      <p>There are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration in some form, by injected humour, or randomised words which don't look even slightly believable.</p>
                   @endforeach
                   </div>

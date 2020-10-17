@@ -14,8 +14,4 @@ use App\Http\Controllers\PostController;
 */
 
 Route::get('/',[PostController::class,'index']);
-//Route::get('/', function () 
-//{
-  //   return view('home');
-//});
-//Route::get('list','posts@list'); 
+Route::get('/{id}',[PostController::class,'show'])->name('detail');
